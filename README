@@ -1,0 +1,37 @@
+MusicalPi - Sheet music display
+
+This project is a Calibre-integrated, music display designed for a touch screen
+on a Raspberry Pi (only tested on 3B version).
+
+It is written in QT (version 5.8 as of this note), and dynamically linked (i.e.
+you must have a working QT install as described; this shows it being built from
+source). As far as I know it will work on the distro version as well.
+
+The software is licensed for use under the Apache 2.0 license; QT is separately
+licensed as described in their distribution, as are Poppler and MidiFile as described.
+
+This software is provided without any warranty or support, though I welcome comments
+and contributions.
+
+Please refer to the Wiki on Github for installation and setup instructions:
+https://github.com/Linwood-F/MusicalPi/wiki
+
+Music is stored as PDF's in the Calibre eBook software, and you must make the Calibre
+library database visible to this program directly - this does NOT use the Calibre server
+but accesses the SQLite database directly.  The Calibre library could be on the Pi
+as well, and you could use it for everything.  I prefer to keep my library on a
+separate server, and the code as written does that, but changes are needed only in
+the path constant in piconstants.h (and in the setup do not set up the cifs mount
+for the server of course).
+
+Playlists can be maintained, for example to save music being practiced by individual(s).
+They are just a named group of music. A given song can be in more than one playlist (or
+none). You create a playlist by selecting a song first, and using the playlist button.
+
+Poppler is used for rendering the PDF documents. No changes were made in Poppler.
+
+ALSA is used as a Midi player if your piano is capable of accepting midi input.
+
+Additional information will be added to the Wiki on Github as available.
+
+Linwood Ferguson
