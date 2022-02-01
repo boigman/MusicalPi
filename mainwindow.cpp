@@ -630,7 +630,7 @@ void MainWindow::sizeLogo()
     QString logoPath = ourSettingsPtr->getSetting("calibrePath").toString()  + "/MusicalPiLocal.gif";
     QFileInfo check_file(logoPath);
     if(!check_file.exists()) {  //MusicalPiLocal.gif doesn't exist -> Library is coming from server
-        pm.load("/home/pi/MusicalPi/MusicalPi.gif");
+        pm.load(ourSettingsPtr->getSetting("calibrePath").toString()  + "/MusicalPi.gif");
     } else {
         pm.load(logoPath);
     }
